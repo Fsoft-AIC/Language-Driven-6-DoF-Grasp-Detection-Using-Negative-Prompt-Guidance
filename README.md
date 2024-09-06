@@ -5,11 +5,12 @@
 [![Paper](https://img.shields.io/badge/Paper-arxiv.2407.13842-FF6B6B.svg)](https://arxiv.org/abs/2407.13842)
 [![Homepage](https://img.shields.io/badge/Homepage-Grasp--Anything_Project-5FF66B.svg)](https://airvlab.github.io/grasp-anything/)
 
-<h2 style="color: blue; font-size: 32px;">ECCV 2024 Oral</h2>
+<h2>ECCV 2024 Oral</h2>
 
-<img src="./demo/intro.png" width="500">
-
-We address the task of language-driven 6-DoF grasp detection in cluttered point clouds. We introduce a novel diffusion model incorporating the new concept of negative prompt guidance learning. Our proposed negative prompt guidance assists in tackling the fine-grained challenge of the language-driven grasp detection task, directing the detection process toward the desired object by steering away from undesired ones.
+<img src="./demo/intro.png" width="700">
+  <div align="left">
+  We address the task of language-driven 6-DoF grasp detection in cluttered point clouds. We introduce a novel diffusion model incorporating the new concept of negative prompt guidance learning. Our proposed negative prompt guidance assists in tackling the fine-grained challenge of the language-driven grasp detection task, directing the detection process toward the desired object by steering away from undesired ones.
+  </div>
 
 </div>
 
