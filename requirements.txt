@@ -1,0 +1,7 @@
+numpy
+torch
+torchvision
+torchaudio
+gorilla-core
+open_clip_torch
+pytorchse3
