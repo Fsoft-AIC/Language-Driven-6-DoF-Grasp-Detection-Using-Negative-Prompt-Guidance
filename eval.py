@@ -3,7 +3,7 @@ import numpy as np
 from utils import *
 import argparse
 from tqdm import tqdm
-from utils.test_utils import earth_movers_distance, coverage_rate, collision_rate
+from utils.test_utils import earth_movers_distance, coverage_rate, collision_free_rate
 
 
 def parse_args():
@@ -25,8 +25,8 @@ if __name__ == "__main__":
                     for datapoint in tqdm(generated_data)\
                     if earth_movers_distance(datapoint["gs"], datapoint["gen_grasps"]) is not None])
     print(f"Average EMD: {np.mean(emds)}")
-    cr = np.array([collision_rate(datapoint["pc"], datapoint["gen_grasps"])\
+    cfr = np.array([collision_free_rate(datapoint["pc"], datapoint["gen_grasps"])\
                     for datapoint in tqdm(generated_data)\
-                    if collision_rate(datapoint["pc"], datapoint["gen_grasps"]) is not None])
-    print(f"Average CFR: {np.mean(cr)}")
+                    if collision_free_rate(datapoint["pc"], datapoint["gen_grasps"]) is not None])
+    print(f"Average CFR: {np.mean(cfr)}")
         
