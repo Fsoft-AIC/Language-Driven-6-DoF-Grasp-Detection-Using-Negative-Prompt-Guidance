@@ -88,7 +88,7 @@ def collision_check(pc, gripper):
     return np.sum(gripper.contains(pc)) > 0
 
 
-def collision_rate(pc, grasps):
+def collision_free_rate(pc, grasps):
     """
     Function to compute the collision rate metric.
     pc' size: N x 6
@@ -98,5 +98,5 @@ def collision_rate(pc, grasps):
     pc = pc[:, :3]  # use only the coordinates of the point cloud
     Rts, ws = se3_exp_map(torch.from_numpy(grasps[:, :-1])).numpy(), (grasps[:, -1] + 1.0)*MAX_WIDTH/2
     grippers = [create_gripper_marker(width_scale=w/NORMAL_WIDTH).apply_transform(Rt) for w, Rt in zip(ws, Rts)]
-    collision_rate = np.mean(np.array([collision_check(pc, gripper) for gripper in grippers]))
-    return collision_rate
+    collision_free_rate = 1.0 - np.mean(np.array([collision_check(pc, gripper) for gripper in grippers]))
+    return collision_free_rate

@@ -42,7 +42,7 @@ The detected grasp poses will be saved to an ```all_data.pkl``` file in the corr
 ## 5. Evaluation
 For evaluation, excecute
 
-        python compute_metrics.py --data <path to all_data.pkl>
+        python eval.py --data <path to all_data.pkl>
 
 where `<path to all_data.pkl>` is the path to the file `all_data.pkl` generated after the step of detecting grasps.
 
